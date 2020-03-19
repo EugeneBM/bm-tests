@@ -8,3 +8,6 @@ class BasePage(metaclass=ABCMeta):
 
     def find_element(self, by, locator):
         return self.driver.find_element(by, locator)
+
+    def navigate(self, url):
+        self.driver.get(url)

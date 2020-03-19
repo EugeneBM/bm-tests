@@ -8,6 +8,11 @@ class TestBm(BaseTestClass):
     def test_test1(self):
         seleniumDriver = self.seleniumDriver
         self.homePageContext = HomePageTestContext(seleniumDriver.driver)
-        seleniumDriver.navigate('https://www.www-bm-qa-base.blazemeter.net/')
+        self.homePageContext.navigate()
+        self.homePageContext.click_start_testing_button()
+        time.sleep(5)
+
+    def test_test2(self):
+        self.homePageContext.navigate()
         self.homePageContext.click_start_testing_button()
         time.sleep(5)
