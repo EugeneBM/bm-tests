@@ -14,5 +14,3 @@ class LoginPage(BasePage):
     def loginForm(self):
         return LoginForm(BasePage.find_element(self, By.XPATH, self.__loginFormLocator))
 
-    def navigate(self):
-        BasePage.navigate(self, self.__url)

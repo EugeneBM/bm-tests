@@ -7,7 +7,7 @@ class SeleniumDriver:
 
     def open(self):
         self.driver = DriverInitializer().getDriver()
-        self.driver.set_page_load_timeout(15)
+        self.driver.set_page_load_timeout(30)
         self.driver.implicitly_wait(5)
         self.driver.maximize_window()
 
