@@ -12,3 +12,6 @@ class LoginPageTestContext:
         self.loginPage.loginForm.emailInput.send_keys(email)
         self.loginPage.loginForm.companyInput.send_keys(company)
         self.loginPage.loginForm.registerButton.click()
+
+    def is_registration_form_displayed(self):
+        return self.loginPage.loginForm.is_displayed()

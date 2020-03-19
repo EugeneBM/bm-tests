@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 
 class HomePage(BasePage):
 
-    __url = "https://www.blazemeter.com/"
+    __url = "https://www.www-bm-qa-base.blazemeter.net/"
     __startTestingNowButtonLocator = ".//button[@class='get_started_button home_get_started_button']"
 
     def __init__(self, driver):

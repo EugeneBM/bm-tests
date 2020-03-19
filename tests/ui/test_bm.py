@@ -2,6 +2,7 @@ from src.automation_tests_ui_business.test_contexts.home_page.home_page_test_con
 from src.automation_tests_ui_business.test_contexts.login_page.login_page_test_context import LoginPageTestContext
 from src.automation_tests_ui_business.test_contexts.welcome_page.welcome_page_test_context import WelcomePageTestContext
 from src.automation_tests_ui_business.test_contexts.welcome_screen.welcome_screen_test_context import WelcomeScreenPageTestContext
+from src.automation_tests_ui_business.test_contexts.personal_settings.personal_settings_test_context import PersonalSettingsTestContext
 from tests.ui.test_base import BaseTestClass
 import time
 
@@ -16,11 +17,12 @@ class TestBm(BaseTestClass):
         cls.loginPageTestContext = LoginPageTestContext(seleniumDriver.driver)
         cls.welcomePageTestContext = WelcomePageTestContext(seleniumDriver.driver)
         cls.welcomeScreenPageTestContext = WelcomeScreenPageTestContext(seleniumDriver.driver)
+        cls.personalSettingsTestContext = PersonalSettingsTestContext(seleniumDriver.driver)
 
     def test_test1(self):
         self.homePageContext.navigate()
         self.homePageContext.click_start_testing_button()
-        self.loginPageTestContext.register('ev23', 'kis23', 'test_ek23@blazemeter.com', 'company')
+        self.loginPageTestContext.register('ev30', 'kis30', 'test_ek30@blazemeter.com', 'company')
         self.welcomeScreenPageTestContext.wait_for_page_loaded()
         actualUrl = self.welcomePageTestContext.get_current_url()
 
@@ -28,6 +30,10 @@ class TestBm(BaseTestClass):
 
         self.welcomePageTestContext.click_skip_wizard_link()
         self.welcomePageTestContext.open_profile_settings()
+        self.personalSettingsTestContext.update_user_information("newEv", "newKis")
+
+        assert self.personalSettingsTestContext.is_user_information_updated()
+
         time.sleep(5)
 
     #def test_test2(self):
