@@ -14,4 +14,4 @@ class LoginPageTestContext:
         self.loginPage.loginForm.registerButton.click()
 
     def is_registration_form_displayed(self):
-        return self.loginPage.loginForm.is_displayed()
+        return self.loginPage.loginForm.registerButton.is_displayed()
