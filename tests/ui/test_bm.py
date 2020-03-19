@@ -1,11 +1,9 @@
 from src.testframework_ui.selenium_driver import SeleniumDriver
 from src.automation_tests_ui_business.test_contexts.home_page.home_page_test_context import HomePageTestContext
 import time
-import pytest
-import unittest
 
 
-class TestBm(unittest.TestCase):
+class TestBm:
     seleniumDriver = None
     homePage = None
 
