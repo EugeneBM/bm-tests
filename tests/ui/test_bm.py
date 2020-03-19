@@ -5,9 +5,13 @@ import time
 
 class TestBm(BaseTestClass):
 
+    @classmethod
+    def setup_class(cls):
+        super().setup_class()
+        seleniumDriver = cls.seleniumDriver
+        cls.homePageContext = HomePageTestContext(seleniumDriver.driver)
+
     def test_test1(self):
-        seleniumDriver = self.seleniumDriver
-        self.homePageContext = HomePageTestContext(seleniumDriver.driver)
         self.homePageContext.navigate()
         self.homePageContext.click_start_testing_button()
         time.sleep(5)
