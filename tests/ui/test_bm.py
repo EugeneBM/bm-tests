@@ -1,21 +1,13 @@
-from src.testframework_ui.selenium_driver import SeleniumDriver
 from src.automation_tests_ui_business.test_contexts.home_page.home_page_test_context import HomePageTestContext
+from tests.ui.test_base import BaseTestClass
 import time
 
 
-class TestBm:
-    seleniumDriver = None
-    homePage = None
-
-    def setup_class(self):
-        self.seleniumDriver = SeleniumDriver()
-        self.seleniumDriver.open()
-        self.homePageContext = HomePageTestContext(self.seleniumDriver.driver)
-
-    def teardown_class(self):
-        self.seleniumDriver.close()
+class TestBm(BaseTestClass):
 
     def test_test1(self):
-        self.seleniumDriver.navigate('https://www.www-bm-qa-base.blazemeter.net/')
+        seleniumDriver = self.seleniumDriver
+        self.homePageContext = HomePageTestContext(seleniumDriver.driver)
+        seleniumDriver.navigate('https://www.www-bm-qa-base.blazemeter.net/')
         self.homePageContext.click_start_testing_button()
         time.sleep(5)
