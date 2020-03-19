@@ -1,9 +1,11 @@
 from src.automation_tests_ui.pages.welcome.welcome_page import WelcomePage
+from src.automation_tests_ui_business.test_contexts.common.application_test_context import ApplicationBasePageTestContext
 
 
-class WelcomePageTestContext:
+class WelcomePageTestContext(ApplicationBasePageTestContext):
 
     def __init__(self, driver):
+        ApplicationBasePageTestContext.__init__(self, driver)
         self.welcomePage = WelcomePage(driver)
 
     def click_skip_wizard_link(self):
