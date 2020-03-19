@@ -6,6 +6,7 @@ from src.automation_tests_ui_business.test_contexts.welcome_screen.welcome_scree
 from src.automation_tests_ui_business.test_contexts.personal_settings.personal_settings_test_context import \
     PersonalSettingsTestContext
 from tests.ui.test_base import BaseTestClass
+from datetime import datetime
 
 
 class TestBm(BaseTestClass):
@@ -20,13 +21,19 @@ class TestBm(BaseTestClass):
         cls.welcomeScreenPageTestContext = WelcomeScreenPageTestContext(seleniumDriver.driver)
         cls.personalSettingsTestContext = PersonalSettingsTestContext(seleniumDriver.driver)
 
-    def test_test1(self):
+    def test_user_registration(self):
+        suffix = datetime.now().strftime("%Y%m%d%H%M%S")
+        first_name = "fn" + suffix
+        last_name = "ln" + suffix
+        email = str.format("test_{0}@blazemeter.com", suffix)
+        company = "company"
+
         self.homePageContext.navigate()
         self.homePageContext.click_start_testing_button()
 
         assert self.loginPageTestContext.is_registration_form_displayed()
 
-        self.loginPageTestContext.register('ev31', 'kis31', 'test_ek31@blazemeter.com', 'company')
+        self.loginPageTestContext.register(first_name, last_name, email, company)
         self.welcomeScreenPageTestContext.wait_for_page_loaded()
         actualUrl = self.welcomePageTestContext.get_current_url()
 
@@ -34,6 +41,6 @@ class TestBm(BaseTestClass):
 
         self.welcomePageTestContext.click_skip_wizard_link()
         self.welcomePageTestContext.open_profile_settings()
-        self.personalSettingsTestContext.update_user_information("newEv", "newKis")
+        self.personalSettingsTestContext.update_user_information("newFirstName", "newLastName")
 
         assert self.personalSettingsTestContext.is_user_information_updated()
