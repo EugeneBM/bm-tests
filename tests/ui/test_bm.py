@@ -20,14 +20,14 @@ class TestBm(BaseTestClass):
     def test_test1(self):
         self.homePageContext.navigate()
         self.homePageContext.click_start_testing_button()
-        self.loginPageTestContext.register('ev22', 'kis22', 'test_ek22@blazemeter.com', 'company')
+        self.loginPageTestContext.register('ev23', 'kis23', 'test_ek23@blazemeter.com', 'company')
         self.welcomeScreenPageTestContext.wait_for_page_loaded()
         actualUrl = self.welcomePageTestContext.get_current_url()
 
         assert actualUrl.endswith('/welcome-wizard/http')
 
         self.welcomePageTestContext.click_skip_wizard_link()
-        self.welcomePageTestContext.click_profile_link()
+        self.welcomePageTestContext.open_profile_settings()
         time.sleep(5)
 
     #def test_test2(self):

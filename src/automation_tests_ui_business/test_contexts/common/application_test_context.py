@@ -8,3 +8,7 @@ class ApplicationBasePageTestContext:
 
     def click_profile_link(self):
         self.applicationBasePage.header.profileLink.click()
+
+    def open_profile_settings(self):
+        self.click_profile_link()
+        self.applicationBasePage.header.profileMenu.profileSettingsLink.click()
