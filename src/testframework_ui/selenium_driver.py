@@ -12,8 +12,8 @@ class SeleniumDriver:
         page_load_timeout = settings.get(self.__section, "PageLoadTimeout")
 
         self.driver = DriverInitializer().getDriver()
-        self.driver.set_page_load_timeout(int(element_implicit_wait_timeout))
-        self.driver.implicitly_wait(int(page_load_timeout))
+        self.driver.set_page_load_timeout(int(page_load_timeout))
+        self.driver.implicitly_wait(int(element_implicit_wait_timeout))
         self.driver.maximize_window()
 
     def close(self):
