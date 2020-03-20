@@ -1,4 +1,4 @@
-from automation_tests_ui.pages.common.base_page import BasePage
+from src.automation_tests_ui.pages.common.base_page import BasePage
 from src.automation_tests_ui.pages.personal_settings.elements.edit_account_form import EditAccountForm
 from selenium.webdriver.common.by import By
 
