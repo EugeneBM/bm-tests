@@ -15,3 +15,6 @@ class BaseTestClass:
     @classmethod
     def teardown_class(cls):
         cls.seleniumDriver.close()
+
+    def teardown_method(self):
+        self.seleniumDriver.take_screenshot(__file__)
