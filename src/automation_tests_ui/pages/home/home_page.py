@@ -15,7 +15,7 @@ class HomePage(BasePage):
         return BasePage.find_element(self, By.XPATH, self.__startTestingNowButtonLocator)
 
     def navigate(self):
-        settings = ConfigParser().settings
+        settings = ConfigParser.get_settings()
         base_url = settings.get(self.__section, "BaseUrl")
 
         super().navigate(base_url)

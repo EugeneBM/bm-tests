@@ -6,8 +6,7 @@ class DriverInitializer:
     __section = "BROWSERSETTINGS"
 
     def getDriver(self):
-        settings = ConfigParser().settings
-        # return Chrome('C:\\SeleniumDrivers\\chromedriver.exe')
+        settings = ConfigParser.get_settings()
         browser = settings.get(self.__section, "BrowserName")
 
         if browser == "Chrome":
