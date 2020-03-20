@@ -11,4 +11,4 @@ class WelcomePage(BasePage):
 
     @property
     def skipWizardLink(self):
-        return BasePage.find_element(self, By.XPATH, self.__skipWizardLinkLocator)
+        return self.driver.find_element(By.XPATH, self.__skipWizardLinkLocator)

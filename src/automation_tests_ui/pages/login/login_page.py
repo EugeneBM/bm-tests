@@ -12,5 +12,5 @@ class LoginPage(BasePage):
 
     @property
     def loginForm(self):
-        return LoginForm(BasePage.find_element(self, By.XPATH, self.__loginFormLocator))
+        return LoginForm(self.driver.find_element(By.XPATH, self.__loginFormLocator))
 

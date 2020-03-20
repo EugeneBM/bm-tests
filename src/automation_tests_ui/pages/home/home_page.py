@@ -12,7 +12,7 @@ class HomePage(BasePage):
 
     @property
     def startTestingNowButton(self):
-        return BasePage.find_element(self, By.XPATH, self.__startTestingNowButtonLocator)
+        return self.driver.find_element(By.XPATH, self.__startTestingNowButtonLocator)
 
     def navigate(self):
         settings = ConfigParser.get_settings()
