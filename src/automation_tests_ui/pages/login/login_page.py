@@ -1,4 +1,4 @@
-from src.automation_tests_ui.pages.base_page import BasePage
+from automation_tests_ui.pages.common.base_page import BasePage
 from src.automation_tests_ui.pages.login.elements.login_form import LoginForm
 from selenium.webdriver.common.by import By
 
