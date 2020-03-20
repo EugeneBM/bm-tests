@@ -11,7 +11,7 @@ class ApplicationBasePageTestContext:
         logging.info("Click 'Profile Menu' link")
         self.applicationBasePage.header.profileLink.click()
 
-    def open_profile_settings(self):
+    def open_personal_settings(self):
         self.click_profile_link()
         logging.info("Click 'Personal Settings' link")
-        self.applicationBasePage.header.profileMenu.profileSettingsLink.click()
+        self.applicationBasePage.header.profileMenu.personalSettingsLink.click()

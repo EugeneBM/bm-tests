@@ -1,4 +1,4 @@
-from src.automation_tests_ui.pages.base_page import BasePage
+from src.automation_tests_ui.pages.common.base_page import BasePage
 from selenium.webdriver.common.by import By
 from src.testframework_ui.utils.config_parser import ConfigParser
 
@@ -12,7 +12,7 @@ class HomePage(BasePage):
 
     @property
     def startTestingNowButton(self):
-        return BasePage.find_element(self, By.XPATH, self.__startTestingNowButtonLocator)
+        return self.driver.find_element(By.XPATH, self.__startTestingNowButtonLocator)
 
     def navigate(self):
         settings = ConfigParser.get_settings()

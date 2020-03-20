@@ -40,7 +40,7 @@ class TestBm(BaseTestClass):
         assert actualUrl.endswith('/welcome-wizard/http')
 
         self.welcomePageTestContext.click_skip_wizard_link()
-        self.welcomePageTestContext.open_profile_settings()
+        self.welcomePageTestContext.open_personal_settings()
         self.personalSettingsTestContext.update_user_information("newFirstName", "newLastName")
 
         assert self.personalSettingsTestContext.is_user_information_updated()

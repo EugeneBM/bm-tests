@@ -1,4 +1,4 @@
-from src.automation_tests_ui.pages.base_page import BasePage
+from src.automation_tests_ui.pages.common.base_page import BasePage
 from src.automation_tests_ui.pages.common.elements.header import Header
 from selenium.webdriver.common.by import By
 
@@ -11,7 +11,7 @@ class ApplicationBasePage(BasePage):
 
     @property
     def header(self):
-        root = BasePage.find_element(self, By.XPATH, self.__headerLocator)
+        root = self.driver.find_element(By.XPATH, self.__headerLocator)
         return Header(self.expand_shadow_element(root))
 
     def expand_shadow_element(self, element):

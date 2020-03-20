@@ -1,4 +1,4 @@
-from src.automation_tests_ui.pages.base_page import BasePage
+from src.automation_tests_ui.pages.common.base_page import BasePage
 from src.automation_tests_ui.pages.login.elements.login_form import LoginForm
 from selenium.webdriver.common.by import By
 
@@ -12,5 +12,5 @@ class LoginPage(BasePage):
 
     @property
     def loginForm(self):
-        return LoginForm(BasePage.find_element(self, By.XPATH, self.__loginFormLocator))
+        return LoginForm(self.driver.find_element(By.XPATH, self.__loginFormLocator))
 
