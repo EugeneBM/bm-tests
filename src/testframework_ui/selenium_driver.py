@@ -5,7 +5,6 @@ import os
 
 
 class SeleniumDriver:
-    driver = None
     __section = "BROWSERSETTINGS"
 
     def open(self):
